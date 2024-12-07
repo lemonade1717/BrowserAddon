@@ -1,15 +1,12 @@
-console.log("Chrome extension go?");
-
-
+console.log("Content running");
 
 chrome.runtime.onMessage.addListener(gotMessage);
 
-function gotMessage(message, sender, sendResponce) {
+function gotMessage(message, sender, sendResponse) {
+  console.log(message);
+  let paragraphs = document.getElementsByTagName('p');
+  for (elt of paragraphs) {
     console.log(message.txt);
-    if (message.txt == "Hello") {
-        let paragraphs = document.getElementsByTagName('p');
-        for (elt of paragraphs) {
-            elt.style['background-color'] = '#FF00FF';
-        }
-    }
+    elt.style['font-size'] = `${message.txt}px`;
+  }
 }

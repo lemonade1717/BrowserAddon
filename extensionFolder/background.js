@@ -1,11 +1,11 @@
-console.log("Background running");
+console.log('background running');
 
 chrome.browserAction.onClicked.addListener(buttonClicked);
 
-function buttonClicked(tab) {
-    let msg = {
-        txt: "Hello"
-    }
+function buttonClicked(tabs) {
+  let msg = {
+    txt: 'hello'
+  }
 
-    chrome.tabs.sendMessage(tab.id, msg);
+  chrome.tabs.sendMessage(tabs.id, msg);
 }

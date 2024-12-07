@@ -1,0 +1,11 @@
+body {
+    margin: 50px;
+}
+
+#sizeInp {
+    width: 50px;
+}
+
+button {
+    float: right;
+}
